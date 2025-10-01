@@ -1,0 +1,120 @@
+<!-- save as clock.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Clock</title>
+  <style>
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(135deg,#0f172a 0%, #071033 100%); color: #e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .clock-card {
+      width: min(720px, 95%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px) saturate(120%);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    
+    .time {
+      display:flex;
+      gap: 12px;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .digits {
+      font-weight: 700;
+      font-size: clamp(2.8rem, 7vw, 5.2rem); 
+      letter-spacing: -2px;
+      line-height: 1;
+      text-shadow: 0 6px 18px rgba(3,10,30,0.6);
+    }
+
+    .colon {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      opacity: 0.95;
+      transform: translateY(2px);
+    }
+
+    .ampm {
+      font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.025);
+      margin-left: 6px;
+    }
+
+    
+    .meta {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      align-items: flex-end;
+    }
+
+    .date {
+      font-size: 0.95rem;
+      color: rgba(230,238,248,0.85);
+    }
+
+    .weekday {
+      font-size: 0.85rem;
+      color: rgba(230,238,248,0.65);
+    }
+
+    
+    .dot {
+      width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.08);box-shadow:0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    
+    @media (max-width:520px){
+      .clock-card { padding:18px; grid-template-columns: 1fr; gap:10px; }
+      .meta { align-items:flex-start; text-align:left; }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="clock-card" role="region" aria-label="Digital clock">
+      <div class="time" aria-hidden="false">
+        
+        <div id="hours" class="digits">00</div>
+        <div class="colon">:</div>
+        <div id="minutes" class="digits">00</div>
+        <div class="colon">:</div>
+        <div id="seconds" class="digits">00</div>
+        <div id="ampm" class="ampm" aria-hidden="true">AM</div>
+      </div>
+
+      <div class="meta" aria-hidden="true">
+        <div id="date" class="date">January 1, 1970</div>
+        <div id="weekday" class="weekday">Thursday</div>
+      </div>
+
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
