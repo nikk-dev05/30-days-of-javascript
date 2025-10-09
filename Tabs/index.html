@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Component</title>
+  <style>
+    
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .tabs-container {
+      background: #fff;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    
+    .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      background: #f4f4f4;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 14px 0;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-weight: 600;
+      font-size: 16px;
+      color: #555;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .tab-button:hover {
+      background: #e0e0e0;
+    }
+
+    .tab-button.active {
+      color: #4c1d95;
+      background: #ede9fe;
+    }
+
+    .tab-button.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #7c3aed;
+      border-radius: 2px 2px 0 0;
+    }
+
+    
+    .tab-content {
+      padding: 30px;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    
+    @media (max-width: 600px) {
+      .tab-button {
+        font-size: 14px;
+        padding: 12px 0;
+      }
+      .tab-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs-container">
+    <div class="tab-buttons">
+      <button class="tab-button active" data-target="#home">Home</button>
+      <button class="tab-button" data-target="#about">About</button>
+      <button class="tab-button" data-target="#contact">Contact</button>
+    </div>
+
+    <div class="tab-content active" id="home">
+      <h2>Welcome to Home</h2>
+      <p>This is the home tab section. You can place your overview or dashboard info here.</p>
+    </div>
+
+    <div class="tab-content" id="about">
+      <h2>About Us</h2>
+      <p>Here’s a simple about section. Add your project or profile details here.</p>
+    </div>
+
+    <div class="tab-content" id="contact">
+      <h2>Contact Info</h2>
+      <p>Display your email, phone number, or a contact form here.</p>
+    </div>
+  </div>
+ <script src="script.js"></script>
+</body>
+</html>
