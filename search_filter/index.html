@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Filter</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 350px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: #007bff;
+}
+
+#itemList {
+  list-style: none;
+}
+
+#itemList li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: 0.2s;
+}
+
+#itemList li:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Search Filter Example</h2>
+    <input type="text" id="searchInput" placeholder="Search items..." />
+
+    <ul id="itemList">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+      <li>Grapes</li>
+      <li>Orange</li>
+      <li>Pineapple</li>
+      <li>Strawberry</li>
+      <li>Watermelon</li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
